@@ -1,102 +1,92 @@
-<img src="https://camo.githubusercontent.com/cbb623400190b0f6ec42c3decd61829324f087d0b5ad1e7d895db82083648672/68747470733a2f2f696d616765732e756e73706c6173682e636f6d2f70686f746f2d313637373434323133363031392d3231373830656361643939353f713d383026773d31363332266175746f3d666f726d6174266669743d63726f702669786c69623d72622d342e302e3326697869643d4d3377784d6a4133664442384d48787761473930627931775957646c664878386647567566444238664878386641253344253344" width=840>
+<img src="https://raw.githubusercontent.com/ua-datalab/ai-healthcare/main/images/ai-healthcare.webp" width=840>
 
-# Generative AI: A Creative Force
+# **Advanced AI for Healthcare: A Transformative Force**
 
-Generative AI is a subset of artificial intelligence that focuses on creating new content. Unlike traditional AI models that analyze data, generative AI models learn patterns from existing data and generate new, original content. This can range from text, images, music, and even code.
+Advanced AI techniques, particularly in the realms of deep learning, sequence modeling, and retrieval-augmented generation (RAG), are revolutionizing the healthcare industry. These technologies offer powerful tools for analyzing complex data, predicting patient outcomes, and enhancing decision-making processes in clinical settings.
 
-## Why Learn About Generative AI?
+## **Why Learn About Advanced AI in Healthcare?**
 
-Understanding generative AI is crucial for several reasons:
+Understanding and mastering advanced AI techniques is crucial for several reasons:
 
-* Innovation: It's driving groundbreaking advancements in various industries, from art and design to healthcare and science.
-* Career Opportunities: The demand for professionals skilled in generative AI is rapidly growing, presenting exciting career prospects.
-* Problem-Solving: Generative AI offers innovative solutions to complex challenges, from content creation to drug discovery.
-* Ethical Considerations: As generative AI becomes more powerful, it's essential to understand its potential impacts and ethical implications.
+- **Healthcare Innovation**: These AI technologies are driving significant advancements in diagnostics, treatment planning, and patient care.
+- **Career Advancement**: Professionals skilled in AI applications for healthcare are in high demand, opening up exciting career opportunities in this rapidly growing field.
+- **Enhanced Patient Care**: AI offers innovative solutions for personalized medicine, early disease detection, and optimizing treatment protocols.
+- **Ethical Considerations**: As AI becomes more integrated into healthcare, understanding its ethical implications and ensuring responsible usage is essential.
 
-## Applications of Generative AI
+## **Applications of Advanced AI in Healthcare**
 
-The applications of generative AI are vast and expanding rapidly. Some key areas include:
+The applications of advanced AI techniques in healthcare are vast and expanding rapidly. Some key areas include:
 
-* Content Creation: Generating text, images, music, and videos.
-Drug Discovery: Accelerating the development of new drugs by designing potential molecules.
-* Design: Creating innovative designs for products and architecture.
-* Customer Service: Developing advanced chatbots and virtual assistants.
-* Education: Personalized learning experiences and intelligent tutoring systems.
+- **Predictive Modeling**: Using deep learning to predict patient outcomes, disease progression, and treatment responses.
+- **Patient Journey Analysis**: Leveraging sequence modeling to understand and optimize patient pathways through the healthcare system.
+- **Clinical Decision Support**: Implementing AI-driven tools to assist healthcare professionals in making more informed decisions.
+- **Personalized Medicine**: Utilizing AI to tailor treatments based on individual patient data, improving efficacy and reducing adverse effects.
 
-## Hugging Face: A Hub for Generative AI
+## **Harnessing PyTorch, Hugging Face, and RAG Models**
 
-Hugging Face has become a central platform for the generative AI community. It provides:
+In this workshop series, you will delve into the practical applications of powerful tools and frameworks that are transforming healthcare AI:
 
-* Pre-trained models: A vast library of pre-trained models for various tasks, making it easier to get started.
-* Datasets: Access to high-quality datasets for training and evaluation.
-Community: A thriving community of AI enthusiasts and researchers.
-* Tools: A platform for building and sharing generative AI applications.
+- **PyTorch**: A versatile deep learning framework that enables the creation and training of sophisticated neural networks, from LSTMs to Transformers.
+- **Hugging Face**: A leading platform for generative AI, offering pre-trained models and tools that accelerate the development of AI applications in healthcare.
+- **RAG Models**: Combining retrieval mechanisms with generative AI to provide contextually relevant information, enhancing decision support and patient care.
 
-By capitalizing on Hugging Face, developers and researchers can accelerate their work in generative AI and build upon the collective knowledge of the community.
+By mastering these tools, you can develop advanced AI solutions that address some of the most pressing challenges in healthcare today.
 
-## The Power Trio: Langchain, Gradio, and RAG for LLM Applications
+## **The Core Components: Deep Learning, Sequence Modeling, and RAG for Healthcare**
 
-Langchain, Gradio, and RAG form a potent combination for developing and deploying LLM applications. Each tool plays a crucial role in the process:
+These workshops focus on three essential areas of AI in healthcare, each contributing to the development of sophisticated, AI-driven healthcare applications:
 
-**Langchain: The Architect**
+### **Deep Learning: The Foundation**
 
-* Orchestrates LLM interactions: Connects LLMs to external data sources, databases, and APIs.
-Creates complex workflows: Builds intricate pipelines for tasks like summarization, question answering, and generation.
-* Manages prompts and responses: Handles prompt engineering and response formatting.
+- **Conceptual Mastery**: Understand the principles of neural networks, activation functions, and training strategies.
+- **Practical Implementation**: Build and train deep learning models using PyTorch, applying them to real-world healthcare datasets.
 
-**Gradio: The Interface Builder**
+### **Sequence Modeling: Capturing Patient Journeys**
 
-* Creates user-friendly interfaces: Builds interactive demos and web applications for LLMs.
-* Visualizes outputs: Displays LLM generated text, images, or other media.
-* Facilitates user input: Allows users to interact with the LLM through various input methods.
+- **LSTMs and Transformers**: Learn how to model sequential data, crucial for understanding and predicting patient outcomes over time.
+- **Application in Healthcare**: Implement sequence models to analyze patient journeys and improve clinical decision-making.
 
-**RAG: The Knowledge Booster**
+### **RAG Models: Enhancing Decision Support**
 
-* Enhances LLM knowledge: Provides access to external information sources.
-* Improves accuracy and relevance: Ensures LLM responses are grounded in factual data.
-* Expands LLM capabilities: Enables the LLM to handle more complex and informative tasks.
+- **Conceptual Understanding**: Explore how RAG models combine retrieval and generative AI to provide contextually relevant information.
+- **Practical Application**: Fine-tune RAG models for specific healthcare tasks, such as generating treatment recommendations based on patient history.
 
-**Combined Power**
+### **Combined Power**
 
-When used together, these tools enable you to:
+When integrated, these techniques enable you to:
 
-* Build sophisticated LLM applications: Create complex systems that leverage the strengths of LLMs and external data.
-* Deploy models effectively: Create user-friendly interfaces for your LLM applications.
-* Improve model performance: Enhance LLM accuracy and relevance through RAG.
-*Accelerate development: Streamline the development process with pre-built components.
+- **Build Comprehensive AI Systems**: Develop advanced AI applications that leverage deep learning, sequence modeling, and RAG for healthcare.
+- **Enhance Decision-Making**: Provide healthcare professionals with tools that deliver accurate, contextually relevant information.
+- **Accelerate Innovation**: Streamline the development of AI-driven healthcare solutions, improving patient outcomes and operational efficiency.
 
-In essence, Langchain, Gradio, and RAG are essential tools for anyone looking to develop and deploy cutting-edge LLM applications. They provide the foundation for building powerful, user-friendly, and informative AI systems.
+**In essence**, mastering these advanced AI techniques will empower you to create transformative healthcare applications that are both innovative and impactful. This workshop series is designed to equip you with the knowledge and skills necessary to lead the future of AI in healthcare.
 
 ***
 
-**Instructors**: Carlos Lizárraga / Enrique Noriega / Mithun Paul. 
+**Instructor**: Greg Chism 
 
-**Location**: Albert B. Weaver Science-Engineering Library. Room 212.
+**Location**: Online, Zoom (Link following registration)
 
-**When**: Thursdays at 2PM.
+**When**: Thursdays at 1PM AZ time.
 
 [Program not definitive!]
 
 **Calendar**
 
-
-| Date      | Title      | Topic Description     | Wiki       |
-| ------------- | ------------- | -------------      | -------------      |
-| 09/05/2024 2PM | Hugging Face Models (NLP) | Hugging Face offers a vast array of pre-trained models for Natural Language Processing (NLP) tasks. These models cover a wide spectrum of applications, from text generation and translation to sentiment analysis and question answering. |  |
-| 09/12/2024 2PM | Hugging Face Models (Computer Vision)| Hugging Face has significantly expanded its offerings beyond NLP to encompass a robust collection of computer vision models. You can find pre-trained models for a wide range of tasks, from basic image classification to complex image generation. |  |
-| 09/19/2024 2PM | Hugging Face Models (Multimodal)|  Hugging Face offers a diverse range of multimodal models, capable of processing and understanding multiple data modalities such as text, images, and audio. These models are at the forefront of AI research and development, enabling innovative applications. |  |
-| 09/26/2024 2PM | Running LLM locally: Ollama  | Ollama is an open-source platform designed to make running large language models (LLMs) on your local machine accessible and efficient. It acts as a bridge between the complex world of LLMs and users who want to experiment and interact with these models without relying on cloud-based services. |  |
-| 10/03/2024 2PM |  Introduction to LangChain | Langchain is an open-source Python library that provides a framework for developing applications powered by large language models (LLMs). It simplifies the process of building complex LLM-based applications by offering tools and abstractions to connect LLMs with other data sources and systems. |  |
-| 10/10/2024 2PM | Getting Started with Phi-3 | Phi-3 is a series of small language models (SLMs) developed by Microsoft. Unlike larger language models (LLMs) that require substantial computational resources, Phi-3 models offer impressive performance while being significantly smaller and more efficient. |  |
-| 10/17/2024 2PM | Getting started with Gemini  | Gemini is a large language model (LLM) developed by Google AI. It's designed to be exceptionally versatile, capable of handling a wide range of tasks and modalities, including text, code, audio, and images. This makes it a significant advancement in the field of artificial intelligence. |  |
-| 10/24/2024 2PM | Introduction to Gradio | Gradio is an open-source Python library that allows you to quickly create user interfaces for your machine learning models, APIs, or any Python function. It simplifies the process of building interactive demos and web applications without requiring extensive knowledge of JavaScript, CSS, or web development. |  |
-| 10/31/2024 2PM | Introduction to RAG | Retrieval-Augmented Generation. It's a technique that enhances the capabilities of Large Language Models (LLMs) by combining them with external knowledge sources. |  |
+| Date      | Title                                  | Topic Description                                                                                      | Wiki       |
+| --------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
+| 09/17/2024 | Introduction to Deep Learning (Conceptual) | A theoretical overview of deep learning, focusing on the fundamentals of neural networks, activation functions, and the challenges of training deep learning models. |  |
+| 09/24/2024 | Applied Deep Learning with PyTorch     | Hands-on workshop where participants will build and train a simple neural network using PyTorch, applying it to a real-world dataset to understand the practical aspects of deep learning. |  |
+| 10/01/2024 | LSTMs and Transformers (Conceptual)    | A conceptual overview of sequence modeling, covering the principles and differences between LSTMs and Transformer models, and their applications in handling sequential data. |  |
+| 10/08/2024 | Applied Sequence Modeling with PyTorch | A practical workshop focused on implementing and training LSTM and Transformer models using PyTorch, with a comparison of their performance on sequential healthcare data. |  |
+| 10/15/2024 | Introduction to RAG Models (Conceptual) | An introduction to Retrieval-Augmented Generation (RAG) models, explaining how they combine retrieval mechanisms with generative AI to enhance decision support and context-aware generation. |  |
+| 10/22/2024 | Applied RAG Models with Hugging Face   | Hands-on workshop where participants will implement and fine-tune a RAG model using Hugging Face, applying it to healthcare-related tasks such as generating contextually relevant information based on EHR data. |  |
 
 ***
 
-Created: 07/18/2024 (C. Lizárraga)
+Created: 08/16/2024 (G. Chism)
 
-Updated: 07/19/2024 (C. Lizárraga)
+Updated: 07/19/2024 (G. Chism)
 
 [DataLab](https://www.datascience.arizona.edu/education/uarizona-data-lab), Data Science Institute,
 University of Arizona. 
