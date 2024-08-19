@@ -1,0 +1,110 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font-family-sans-serif: "Montserrat", sans-serif;
+$presentation-heading-color: #1E5288;
+$presentation-title-slide-text-align: "left";
+$link-color: #AB0520;
+$code-color: #1E5288;
+$code-block-font-size: 0.6em;
+$presentation-font-size-root: 45px;
+$presentation-h2-font-size: 1.2em;
+
+/*-- scss:rules --*/
+
+details>summary {
+  font-size: 0.75em;
+}
+
+.reveal #title-slide .subtitle {
+  color: #1E5288;
+  font-weight: bold;
+  text-align: left;
+}
+
+.reveal #title-slide .author {
+  text-align: left;
+}
+
+.reveal #title-slide .institute {
+  text-align: left;
+}
+
+.large {
+  font-size: 1.75em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.xsmall {
+  font-size: 0.6em;
+}
+
+.xxsmall {
+  font-size: 0.5em;
+}
+
+b, strong {
+color: #378DBD;
+}
+
+.reveal .slide .question {
+  border-left: 3px solid #1E5288;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background: #a4b9da;
+}
+
+.reveal .slide .instruction {
+  border-left: 3px solid #1E5288;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background: #E2E9EB;
+}
+
+.reveal .slide .poll {
+  border-left: 3px solid #FFBE98;
+  padding-left: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background: #ffdecb;
+}
+
+.reveal .slide .appex {
+  border-left: 3px solid #1E5288;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  background: #a4b9da;
+}
+
+.reveal .slide .demo {
+  border-left: 3px solid #3a7d83;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  background: #a8d5d9;
+}
+
+.reveal pre code {
+  width: 1100px;
+}
+
+.reveal .hand {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.2em
+}
+
+.reveal dl.code-annotation-container-grid {
+    margin-left: 0.1em;
+    background-color: #ecf1f7;
+}

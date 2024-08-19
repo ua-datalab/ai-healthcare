@@ -1,0 +1,376 @@
+---
+title: "Advanced AI for Healthcare"
+subtitle: "Introduction to Deep Learning I"
+institute: "U of A InfoSci + DataLab"
+author: "Dr. Greg Chism"
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+auto-stretch: false
+footer: "[🔗 ua-datalab.github.io](https://ua-datalab.github.io/)"
+logo: "https://github.com/clizarraga-UAD7/DataScienceLab/raw/main/images/UADLSquareLogo.png?raw=true"
+jupyter: python3
+---
+
+## Objective {.smaller}
+
+::: fragment
+Provide a theoretical foundation for deep learning, focusing on the core concepts of neural networks, activation functions, and training strategies.
+:::
+
+::: fragment
+> No code today 🙂
+:::
+
+## Overview of topics
+
+1.  AI vs. Machine Learning vs. Deep Learning
+2.  Intro to Deep Learning
+    1.  Structure
+    2.  Backpropagation
+    3.  
+
+# Overview of Deep Learning
+
+## You mean ChatGPT?
+
+::: fragment
+![](images/ChatGPT-Logo.png){fig-align="center" width="1000"}
+:::
+
+## Artificial Intelligence
+
+![](images/ai-02.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-1.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-2.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-4-01.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-5.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-6.png){fig-align="center"}
+
+## Artificial Intelligence
+
+![](images/ai-7.png){fig-align="center"}
+
+## **First, machine learning**
+
+![](images/ml-01.png){fig-align="center" width="888"}
+
+## Why machine learning in health sciences? {.smaller}
+
+Machine learning has played a very important role in solving problems in:
+
+::: incremental
+-   Medical imaging and diagnostics
+
+-   Health economics and predictive healthcare
+
+-   Biomedical research and drug discovery
+
+-   Medical devices and robotics
+
+-   Clinical natural language processing
+:::
+
+## What is machine learning? {.smaller}
+
+![](images/ml-workflow.png){fig-align="center"}
+
+::: fragment
+Use **machine learning** for [complex tasks]{.underline} with [big data]{.underline} and [many variables]{.underline} when the [underlying formula or equation is unknown]{.underline}
+:::
+
+## How does machine learning work? {.smaller}
+
+![](images/ml-types.png){fig-align="center" width="873"}
+
+::: incremental
+-   **Supervised** learning trains a model on labeled data to predict future outputs.
+
+-   **Unsupervised** learning finds hidden patterns in unlabeled data.
+:::
+
+## Now, deep learning
+
+![](images/dl.png){fig-align="center" width="908"}
+
+## Why deep learning in health sciences? {.smaller}
+
+::: incremental
+-   DL achieves higher diagnostic accuracy than ever before.
+
+-   It's used in critical healthcare applications like disease detection.
+
+-   Developed in the 1980s, it wasn't widely adopted due to limited labeled medical data and computing power.
+
+-   Today, vast labeled datasets, like millions of medical images, enable high-accuracy training.
+
+-   High-performance GPUs and cloud computing now power deep learning efficiently in healthcare.
+:::
+
+## What is deep learning? {.smaller}
+
+![](images/dl-workflow.png){fig-align="center"}
+
+::: fragment
+Use **deep learning** for [highly complex tasks]{.underline} with [*vast* amounts of data]{.underline} and [intricate patterns]{.underline} when [traditional methods struggle to define the relationships]{.underline}.
+:::
+
+## Machine Learning vs. Deep Learning
+
+![](images/ml-ai-01.png){fig-align="center" width="800"}
+
+## Machine Learning vs. Deep Learning {.smaller}
+
+::: incremental
+-   DL is a specific type of machine learning.
+
+-   In ML, features are manually extracted from images to develop a classification model.
+
+-   In DL, relevant features are automatically extracted from images.
+
+-   DL uses "end-to-end learning," where a neural network learns directly from raw data to perform classification.
+
+-   DL algorithms improve with more data, while traditional ML models plateau.
+:::
+
+# Intro to Deep Learning (DL)
+
+::: fragment
+Finally... 😤
+:::
+
+::: fragment
+> Still no code...
+:::
+
+## Artificial Neural Networks {.smaller}
+
+![](images/dl-brain.jpg){fig-align="center" width="764"}
+
+::: fragment
+Common interpretation, at the heart of DL.
+:::
+
+## Deep Learning Networks
+
+![](images/nn-dl.webp){fig-align="center"}
+
+## DL Components {.smaller}
+
+::: incremental
+-   Neurons
+
+-   Layers
+
+    -   Input
+
+    -   Hidden
+
+    -   Output
+
+-   Activation Functions
+:::
+
+## DL Components: Neurons {.smaller}
+
+![](images/neuron-01.png){fig-align="center" width="847"}
+
+::: incremental
+-   The building blocks of neural networks.
+
+-   Each **neuron** performs a weighted sum of inputs, followed by an **activation function.**
+:::
+
+## DL Components: Layers {.smaller}
+
+![](images/dl-structure.png){fig-align="center" width="851"}
+
+::: columns
+::: {.column width="33.33%"}
+![](images/input-02.png){fig-align="center" width="208"}
+
+::: fragment
+Data enters here $\rightarrow$
+:::
+:::
+
+::: {.column width="33.33%"}
+![](images/hidden-03.png){fig-align="center" width="214"}
+
+::: fragment
+Processed here $\rightarrow$
+:::
+:::
+
+::: {.column width="33.33%"}
+![](images/output-02.png){fig-align="center" width="210"}
+
+::: fragment
+Result / prediction
+:::
+:::
+:::
+
+## DL Components: Activation functions {.smaller}
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the activation functions
+def relu(x):
+    return np.maximum(0, x)
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def tanh(x):
+    return np.tanh(x)
+
+def leaky_relu(x, alpha=0.01):
+    return np.where(x > 0, x, x * alpha)
+
+def softmax(x):
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+# Generate the data
+x = np.linspace(-10, 10, 400)
+```
+
+::: panel-tabset
+## ReLU
+
+::: columns
+::: {.column width="30%"}
+```{python}
+#| echo: false
+plt.figure(figsize=(3, 3))
+plt.plot(x, relu(x))
+plt.title("ReLU")
+plt.show()
+```
+:::
+
+::: {.column width="70%"}
+::: incremental
+-   **Formula:** $f(x) = \max(0, x)$
+
+-   **Characteristics:**
+
+    -   Simple and fast to compute.
+
+    -   Keeps positive values, helping the network learn better.
+
+    -   Widely used in hidden layers of neural networks.
+
+-   **Use Case:** Great for deep networks, especially in image recognition.
+:::
+:::
+:::
+
+## Sigmoid
+
+::: columns
+::: {.column width="30%"}
+```{python}
+#| echo: false
+plt.figure(figsize=(3, 3))
+plt.plot(x, sigmoid(x))
+plt.title("Sigmoid")
+plt.show()
+```
+:::
+
+::: {.column width="70%"}
+::: incremental
+-   **Formula:** $f(x)=\frac{1}{1+e^{−x}}$​
+
+-   **Characteristics:**
+
+    -   Produces values between 0 and 1, ideal for binary decisions.
+
+    -   Can slow down learning for extreme inputs (very high or low values).
+
+-   **Use Case:** Often used in the final layer for binary classification tasks.
+:::
+:::
+:::
+
+## Softmax
+
+::: columns
+::: {.column width="30%"}
+```{python}
+#| echo: false
+plt.figure(figsize=(3, 3))
+plt.plot(x, softmax(x))
+plt.title("Softmax")
+plt.show()
+```
+:::
+
+::: {.column width="70%"}
+::: incremental
+-   **Formula:** $f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}$​​
+
+-   **Characteristics:**
+
+    -   Turns outputs into probabilities that sum to 1.
+
+    -   Used for multi-class classification problems.
+
+-   **Use Case:** Essential when there are multiple possible outcomes, like in image classification with many categories.
+:::
+:::
+:::
+:::
+
+::: fragment
+[How do I choose?](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
+:::
+
+## Activation functions: so what? {.smaller}
+
+**Importance in Neural Networks:**
+
+::: incremental
+-   **Non-Linearity:** Activation functions enable networks to tackle complex tasks, like image and speech recognition.
+
+-   **Layer-wise Learning:** They allow each layer to learn different features of the data.
+
+-   **Training Dynamics:** The activation function impacts the network's learning efficiency and speed.
+:::
+
+**In Medical Applications:**
+
+::: incremental
+-   Key towards DL accurately analyzing and predicting medical data, such as diagnosing diseases or forecasting patient outcomes, by capturing complex biological relationships.
+:::
+
+# Intro to Back Propogation
