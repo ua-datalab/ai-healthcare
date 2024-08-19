@@ -75,12 +75,12 @@ When integrated, these techniques enable you to:
 
 | Date      | Title                                  | Topic Description                                                                                      | Wiki       |
 | --------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
-| 09/17/2024 | Introduction to Deep Learning (Conceptual) | A theoretical overview of deep learning, focusing on the fundamentals of neural networks, activation functions, and the challenges of training deep learning models. |  |
-| 09/24/2024 | Applied Deep Learning with PyTorch     | Hands-on workshop where participants will build and train a simple neural network using PyTorch, applying it to a real-world dataset to understand the practical aspects of deep learning. |  |
-| 10/01/2024 | LSTMs and Transformers (Conceptual)    | A conceptual overview of sequence modeling, covering the principles and differences between LSTMs and Transformer models, and their applications in handling sequential data. |  |
-| 10/08/2024 | Applied Sequence Modeling with PyTorch | A practical workshop focused on implementing and training LSTM and Transformer models using PyTorch, with a comparison of their performance on sequential healthcare data. |  |
-| 10/15/2024 | Introduction to RAG Models (Conceptual) | An introduction to Retrieval-Augmented Generation (RAG) models, explaining how they combine retrieval mechanisms with generative AI to enhance decision support and context-aware generation. |  |
-| 10/22/2024 | Applied RAG Models with Hugging Face   | Hands-on workshop where participants will implement and fine-tune a RAG model using Hugging Face, applying it to healthcare-related tasks such as generating contextually relevant information based on EHR data. |  |
+| 09/19/2024 | Introduction to Deep Learning (Conceptual) | A theoretical overview of deep learning, focusing on the fundamentals of neural networks, activation functions, and the challenges of training deep learning models. |  |
+| 09/26/2024 | Applied Deep Learning with PyTorch     | Hands-on workshop where participants will build and train a simple neural network using PyTorch, applying it to a real-world dataset to understand the practical aspects of deep learning. |  |
+| 10/03/2024 | LSTMs and Transformers (Conceptual)    | A conceptual overview of sequence modeling, covering the principles and differences between LSTMs and Transformer models, and their applications in handling sequential data. |  |
+| 10/10/2024 | Applied Sequence Modeling with PyTorch | A practical workshop focused on implementing and training LSTM and Transformer models using PyTorch, with a comparison of their performance on sequential healthcare data. |  |
+| 10/17/2024 | Introduction to RAG Models (Conceptual) | An introduction to Retrieval-Augmented Generation (RAG) models, explaining how they combine retrieval mechanisms with generative AI to enhance decision support and context-aware generation. |  |
+| 10/24/2024 | Applied RAG Models with Hugging Face   | Hands-on workshop where participants will implement and fine-tune a RAG model using Hugging Face, applying it to healthcare-related tasks such as generating contextually relevant information based on EHR data. |  |
 
 ***
 
