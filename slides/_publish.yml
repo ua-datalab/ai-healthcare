@@ -1,0 +1,4 @@
+- source: intro-deep-learning.qmd
+  quarto-pub:
+    - id: 4aea0f72-1a91-4236-97b9-bd59fae54dc4
+      url: 'https://gchism.quarto.pub/intro-dl-conceptual'

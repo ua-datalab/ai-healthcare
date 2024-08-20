@@ -1,8 +1,8 @@
 ---
 title: "Advanced AI for Healthcare"
-subtitle: "Introduction to Deep Learning I"
-institute: "U of A InfoSci + DataLab"
 author: "Dr. Greg Chism"
+institute: U of A InfoSci + DataLab
+subtitle: Introduction to Deep Learning I
 title-slide-attributes:
   data-slide-number: none
 format:
@@ -16,9 +16,11 @@ execute:
   freeze: auto
   echo: true
 auto-stretch: false
-footer: "[🔗 ua-datalab.github.io](https://ua-datalab.github.io/)"
+footer: "[\U0001F517 ua-datalab.github.io](https://ua-datalab.github.io/)"
 logo: "https://github.com/clizarraga-UAD7/DataScienceLab/raw/main/images/UADLSquareLogo.png?raw=true"
 jupyter: python3
+resource_files:
+- slides.scss
 ---
 
 ## Objective {.smaller}
@@ -33,13 +35,17 @@ Provide a theoretical foundation for deep learning, focusing on the core concept
 
 ## Overview of topics
 
+::: incremental
 1.  AI vs. Machine Learning vs. Deep Learning
 2.  Intro to Deep Learning
     1.  Structure
     2.  Backpropagation
-    3.  
+    3.  Architectures
+    4.  Challenges
+3.  Summary
+:::
 
-# Overview of Deep Learning
+# Overview of Artificial Intelligence
 
 ## You mean ChatGPT?
 
@@ -105,12 +111,12 @@ Use **machine learning** for [complex tasks]{.underline} with [big data]{.underl
 
 ## How does machine learning work? {.smaller}
 
-![](images/ml-types.png){fig-align="center" width="873"}
+![](images/ml-types-01.png){fig-align="center" width="1095"}
 
 ::: incremental
--   **Supervised** learning trains a model on labeled data to predict future outputs.
+-   **Supervised** trains a model on labeled data to predict outputs.
 
--   **Unsupervised** learning finds hidden patterns in unlabeled data.
+-   **Unsupervised** finds hidden patterns in unlabeled data.
 :::
 
 ## Now, deep learning
@@ -175,6 +181,8 @@ Finally... 😤
 Common interpretation, at the heart of DL.
 :::
 
+## Simple Neural Networks
+
 ## Deep Learning Networks
 
 ![](images/nn-dl.webp){fig-align="center"}
@@ -193,6 +201,10 @@ Common interpretation, at the heart of DL.
     -   Output
 
 -   Activation Functions
+
+-   Weights
+
+-   Biases
 :::
 
 ## DL Components: Neurons {.smaller}
@@ -373,4 +385,292 @@ plt.show()
 -   Key towards DL accurately analyzing and predicting medical data, such as diagnosing diseases or forecasting patient outcomes, by capturing complex biological relationships.
 :::
 
-# Intro to Back Propogation
+## DL Components: Weights {.smaller}
+
+![](images/weights.png){fig-align="center" width="1278"}
+
+## DL Components: Weights {.smaller}
+
+![](images/weights-1.png){fig-align="center"}
+
+::: incremental
+-   **Weights** transform input data in the network's hidden layers.
+
+-   Each **weight** indicates the connection strength between nodes.
+
+-   Initially [small random values]{.underline} (see [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent))
+:::
+
+## DL Components: Biases
+
+![](images/bias.png){fig-align="center"}
+
+## DL Components: Biases
+
+::: incremental
+-   Biases are extra parameters that shift activation functions.
+
+-   They allow neurons to activate even with zero input.
+
+-   Biases help the model fit data more effectively.
+:::
+
+# Batches & Epochs
+
+## Training progression
+
+![](images/batches-epoch.png){fig-align="center"}
+
+## Training progression
+
+![](images/batches-epoch-2.png){fig-align="center"}
+
+## Training progression
+
+![](images/batches-epoch-3.png){fig-align="center"}
+
+## Training progression
+
+![](images/batches-epoch-4.png){fig-align="center"}
+
+## Sample vs. Batches vs. Epoches
+
+$\text{batches per epoch} = \frac{\text{dataset size}}{\text{batch size}}$
+
+::: incremental
+-   A **sample** is 1 row of data
+
+-   **Batch size** is the number of samples processed before updating the model
+
+-   The number of **epochs** is the number of complete passes through the training dataset.
+:::
+
+## Training progression
+
+![](images/batches-epoch-4.png){fig-align="center"}
+
+::: fragment
+This was one pass through the data
+:::
+
+## Bad output {.smaller}
+
+Let's say your model output is off target:
+
+::: fragment
+![](images/bad-output.png){fig-align="center"}
+:::
+
+::: fragment
+First, how can we tell?
+:::
+
+## Cost function {.smaller}
+
+> A cost function is a mathematical function that calculates the difference between the target actual values (ground truth) and the values predicted by the model.
+
+::: incremental
+-   Functionally similar to model evaluation
+
+-   e.g., Logistic Regression (outputs 0, 1):
+:::
+
+::: fragment
+$$ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} \log(h_\theta(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)})) \right]$$
+:::
+
+::: fragment
+Yikes... 😣
+:::
+
+## Bad output {.smaller}
+
+Let's say your model output is off target:
+
+::: fragment
+![](images/bad-output.png){fig-align="center"}
+:::
+
+::: fragment
+What do you do now?..
+:::
+
+# Intro to Backpropogation
+
+## Backpropogation
+
+![](images/bp-1-01.png){fig-align="center"}
+
+## Backpropogation
+
+![](images/bp-2-01.png){fig-align="center"}
+
+## Backpropogation
+
+![](images/bp-3.png){fig-align="center"}
+
+## Backpropogation: What is it? {.smaller}
+
+-   A method for updating model weights based on output errors.
+
+-   Helps the network learn by correcting mistakes.
+
+-   Interactively reduces the **cost function** after each **Epoch**
+
+## Backpropogation: Optimization {.smaller}
+
+> **Optimization** refers to the task of minimizing/maximizing an objective function $f(x)$ parameterized by $x$.
+
+**Goals:**
+
+::: incremental
+-   Find the global minimum of the objective function, possible if it's convex, meaning any local minimum is also the global minimum.
+
+-   Find the lowest value in the local area of the objective function, typical when the function isn't convex, as in most deep learning problems.
+:::
+
+::: fragment
+**Example in Health Sciences**: Training models to accurately diagnose diseases from medical images by iteratively improving predictions.
+:::
+
+## Backpropogation: How?? {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Gradient Descent**
+
+![](images/gradient-descent.png){fig-align="center" width="685"}
+:::
+
+::: {.column width="50%"}
+::: incremental
+-   Minimizes a function by moving towards the steepest descent.
+
+-   It updates parameters using the gradient of the cost function.
+
+-   The learning rate controls step size; balance is key.
+
+-   Continues until reaching a minimum.
+:::
+:::
+:::
+
+# Neural Network Architectures
+
+## Feed forward {.smaller}
+
+![](images/ff.png){fig-align="center" width="846"}
+
+::: incremental
+-   Simple, one-way flow of information.
+
+-   Commonly used for tasks like classification and regression.
+:::
+
+## Convolutional Neural Networks (CNNs) {.smaller}
+
+![](images/cnn-1.png){fig-align="center" width="960"}
+
+::: {.incremental .small}
+-   Designed for image processing.
+
+-   Extracts hierarchical features from images.
+
+-   **Health Sciences Application:** Identifying tumors in radiology images.
+:::
+
+## Recurrent Neural Networks (RNNs) {.smaller}
+
+![](images/rnn-01.png){fig-align="center" width="660"}
+
+::: {.incremental .small}
+-   Handles sequence data, like time series or language.
+
+-   Captures dependencies over time.
+
+-   **Health Sciences Application:** Predicting patient outcomes over time.
+:::
+
+## When to use each architecture {.smaller}
+
+::: fragment
+**Feedforward Networks:**
+
+::: incremental
+-   Best for tabular data and basic classification tasks.
+:::
+:::
+
+::: fragment
+**CNNs:**
+
+::: incremental
+-   Ideal for image and video analysis.
+
+-   **Health Sciences Example:** Detecting skin cancer from images.
+:::
+:::
+
+::: fragment
+**RNNs:**
+
+::: incremental
+-   Suited for time-dependent data, such as patient monitoring.
+
+-   **Health Sciences Example:** Forecasting disease progression.
+:::
+:::
+
+## Challenges {.smaller}
+
+::: {.fragment .small}
+**Overfitting:**
+
+::: incremental
+-   When a model performs well on training data but fails to generalize to new data.
+
+-   **Solution:** Regularization techniques like [dropout](https://www.geeksforgeeks.org/dropout-regularization-in-deep-learning/) and [data augmentation](https://en.wikipedia.org/wiki/Data_augmentation).
+:::
+:::
+
+::: {.fragment .small}
+**Vanishing Gradients:**
+
+::: incremental
+-   Gradients diminish as they are propagated back, slowing learning.
+
+-   **Solution:** Activation functions like [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) and proper weight initialization.
+:::
+:::
+
+::: {.fragment .small}
+**Regularization Techniques:**
+
+::: incremental
+-   **Dropout:** Randomly deactivating neurons during training to prevent overfitting.
+
+-   **L2 Regularization:** Penalizes large weights to simplify the model.
+:::
+:::
+
+# Summary
+
+## Summary {.smaller}
+
+::: columns
+::: {.column width="50%"}
+
+![](images/ai-healthcare.webp){fig-align="center" width="600"}
+:::
+
+::: {.column width="50%"}
+
+::: incremental
+-   Revolutionizing diagnostics and personalized treatments.
+
+-   Success depends on understanding neural networks, architectures, and overcoming challenges.
+:::
+:::
+:::
+
+# Thank You 😊 {style="text-align: center;"}
