@@ -1,0 +1,514 @@
+---
+title: "Advanced AI for Healthcare"
+author: "Dr. Greg Chism"
+institute: U of A InfoSci + DataLab
+subtitle: Introduction to Deep Learning II
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+auto-stretch: false
+footer: "[\U0001F517 ua-datalab.github.io](https://ua-datalab.github.io/)"
+logo: "https://github.com/clizarraga-UAD7/DataScienceLab/raw/main/images/UADLSquareLogo.png?raw=true"
+jupyter: python3
+resource_files:
+- slides.scss
+---
+
+## Objective {.smaller}
+
+::: fragment
+To reinforce the concepts from Lecture 1 by implementing a neural network to solve the XOR problem using PyTorch.
+:::
+
+::: fragment
+> Code today 😬
+:::
+
+## Overview of topics
+
+::: incremental
+1.  Recap of key concepts
+2.  Intro to Pytorch
+3.  Intro to the XOR problem
+4.  Applied DL with Pytorch
+:::
+
+# Review of key concepts
+
+## Artificial Intelligence
+
+![](images/ai-7.png){fig-align="center"}
+
+## Why deep learning in health sciences? {.smaller}
+
+::: incremental
+-   DL achieves higher diagnostic accuracy than ever before.
+
+-   It's used in critical healthcare applications like disease detection.
+
+-   High-performance GPUs and cloud computing now power deep learning efficiently in healthcare.
+:::
+
+## Machine Learning vs. Deep Learning
+
+![](images/ml-ai-01.png){fig-align="center" width="800"}
+
+## Deep Learning Networks
+
+![](images/nn-dl.webp){fig-align="center"}
+
+## DL Components: Neurons {.smaller}
+
+![](images/neuron-01.png){fig-align="center" width="847"}
+
+::: incremental
+-   The building blocks of neural networks.
+
+-   Each **neuron** performs a weighted sum of inputs, followed by an **activation function.**
+:::
+
+## DL Components: Layers {.smaller}
+
+![](images/dl-structure.png){fig-align="center" width="851"}
+
+::: columns
+::: {.column width="33.33%"}
+![](images/input-02.png){fig-align="center" width="208"}
+
+::: fragment
+Data enters here $\rightarrow$
+:::
+:::
+
+::: {.column width="33.33%"}
+![](images/hidden-03.png){fig-align="center" width="214"}
+
+::: fragment
+Processed here $\rightarrow$
+:::
+:::
+
+::: {.column width="33.33%"}
+![](images/output-02.png){fig-align="center" width="210"}
+
+::: fragment
+Result / prediction
+:::
+:::
+:::
+
+## DL Components: Activation functions {.smaller}
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the activation functions
+def relu(x):
+    return np.maximum(0, x)
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def tanh(x):
+    return np.tanh(x)
+
+def leaky_relu(x, alpha=0.01):
+    return np.where(x > 0, x, x * alpha)
+
+def softmax(x):
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+# Generate the data
+x = np.linspace(-10, 10, 400)
+```
+
+::: panel-tabset
+## ReLU
+
+::: columns
+::: {.column width="30%"}
+```{python}
+#| echo: false
+plt.figure(figsize=(3, 3))
+plt.plot(x, relu(x))
+plt.title("ReLU")
+plt.show()
+```
+
+::: incremental
+-   **Characteristics:**
+
+    -   Simple and fast to compute.
+
+    -   Keeps positive values, helping the network learn better.
+
+    -   Widely used in hidden layers of neural networks.
+:::
+:::
+:::
+
+## Sigmoid
+
+::: columns
+::: {.column width="30%"}
+```{python}
+#| echo: false
+plt.figure(figsize=(3, 3))
+plt.plot(x, sigmoid(x))
+plt.title("Sigmoid")
+plt.show()
+```
+:::
+
+::: {.column width="70%"}
+::: incremental
+-   **Characteristics:**
+
+    -   Produces values between 0 and 1, ideal for binary decisions.
+
+    -   Can slow down learning for extreme inputs (very high or low values).
+
+    -   Often used in the final layer for binary classification tasks.
+:::
+:::
+:::
+:::
+
+## DL Components: Weights {.smaller}
+
+![](images/weights-1.png){fig-align="center"}
+
+::: incremental
+-   **Weights** transform input data in the network's hidden layers.
+
+-   Each **weight** indicates the connection strength between nodes.
+
+-   Initially [small random values]{.underline} (see [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent))
+:::
+
+## DL Components: Biases
+
+![](images/bias.png){fig-align="center"}
+
+## Training progression
+
+![](images/batches-epoch-3.png){fig-align="center"}
+
+## Training progression
+
+![](images/batches-epoch-4.png){fig-align="center"}
+
+## Cost function {.smaller}
+
+> A cost function is a mathematical function that calculates the difference between the target actual values (ground truth) and the values predicted by the model.
+
+::: incremental
+-   Functionally similar to model evaluation
+:::
+
+## Backpropogation
+
+![](images/bp-1-01.png){fig-align="center"}
+
+## Backpropogation
+
+![](images/bp-2-01.png){fig-align="center"}
+
+## Backpropogation
+
+![](images/bp-3.png){fig-align="center"}
+
+# Intro to {style="text-align: center;"}
+
+![](images/pytorch.png){fig-align="center" width="304"}
+
+## What is PyTorch?
+
+::: incremental
+-   PyTorch is an open-source deep learning framework by Facebook AI, popular for its flexibility and ease of use.
+
+-   It supports dynamic computation graphs, ideal for complex model architectures.
+:::
+
+## Why PyTorch? {.smaller}
+
+::: incremental
+-   **User-Friendly:** Pythonic and easy to learn, making it accessible for both beginners and experts.
+
+-   **Dynamic Graphs:** Allows on-the-fly changes, enabling flexible model design and debugging.
+
+-   **Widespread Use:** Preferred in research and industry due to its simplicity and power.
+
+-   **Strong Ecosystem:** Extensive community support with many resources, libraries, and tutorials.
+:::
+
+## PyTorch key components {.smaller}
+
+::: panel-tabset
+## Tensors
+
+Core data structure, similar to NumPy arrays but with [GPU support]{.underline}.
+
+```{python}
+#| eval: false
+import torch
+x = torch.tensor([1, 2, 3])
+x = x.to('cuda')  # Move to GPU
+```
+
+## Autograd
+
+Automatic differentiation for gradient-based optimization.
+
+```{python}
+#| eval: false
+x = torch.tensor(1.0, requires_grad=True)
+y = x**2
+y.backward()
+print(x.grad)  # Outputs 2.0
+```
+
+## nn Module
+
+Tools for building and training neural networks.
+
+```{python}
+#| eval: false
+import torch.nn as nn
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc = nn.Linear(2, 1)
+    def forward(self, x):
+        return self.fc(x)
+```
+
+## Optim
+
+Optimization algorithms like SGD and Adam.
+
+```{python}
+#| eval: false
+import torch.optim as optim
+model = SimpleNN()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+```
+:::
+
+# The XOR Problem {style="text-align: center;"}
+
+```{python}
+#| echo: false
+#| fig-align: center
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+xor = pd.read_csv("data/xor.csv")
+
+X = xor[['x1', 'x2']].values
+y = xor['class label'].values
+
+plt.figure(figsize=(6, 6))
+plt.scatter(X[y == 0][:, 0], X[y == 0][:, 1], label='Class 0')
+plt.scatter(X[y == 1][:, 0], X[y == 1][:, 1], label='Class 1')
+plt.xlabel('Input 1 (x1)')
+plt.ylabel('Input 2 (x2)')
+plt.legend()
+plt.show()
+```
+
+## What is the XOR Problem? {.smaller}
+
+::: incremental
+-   The XOR (Exclusive OR) gate is a logic gate that outputs true (1) only when the inputs differ (one is true, the other is false).
+
+-   XOR is a classic problem in neural networks because it highlights the limitations of simple linear models.
+:::
+
+## Why Linear Models Fail {.smaller}
+
+::: incremental
+-   **Linear models** can only separate data points with a single straight line (a linear boundary).
+
+-   The XOR problem is **not linearly separable** because you cannot draw a straight line to separate the two classes (0 and 1) correctly.
+
+-   To solve XOR, we need a model that can capture **non-linear patterns**, which is where neural networks come into play.
+:::
+
+# Applied DL with the XOR Problem
+
+## Data preparation {.smaller}
+
+::: panel-tabset
+## Conceptually
+
+```{python}
+#| code-fold: true
+#| code-summary: "XOR Dataset"
+#| code-line-numbers: "|1-3|5|7,8"
+import numpy as np
+import pandas as pd
+
+xor = pd.read_csv("data/xor.csv")
+
+X = xor[['x1', 'x2']].values
+y = xor['class label'].values
+```
+
+::: incremental
+-   Load and normalize the data to ensure features are on a similar scale.
+
+-   Convert the data into PyTorch tensors for model training.
+
+-   Use DataLoader to handle batching, which improves training efficiency and stability.
+:::
+
+## Code
+
+```{python}
+#| code-line-numbers: "|1-3|5,6|8,9|11-12"
+import torch
+from sklearn.preprocessing import StandardScaler
+from torch.utils.data import DataLoader, TensorDataset
+
+scaler = StandardScaler()
+X_normalized = scaler.fit_transform(X)
+
+X_tensor = torch.tensor(X_normalized, dtype=torch.float32)
+y_tensor = torch.tensor(y.reshape(-1, 1), dtype=torch.float32)
+
+dataset = TensorDataset(X_tensor, y_tensor)
+dataloader = DataLoader(dataset, batch_size=4, shuffle=True)
+```
+:::
+
+## Building the XOR Neural Network {.smaller}
+
+::: panel-tabset
+## Conceptually
+
+::: incremental
+**Defining the Neural Network Architecture:**
+
+-   A simple network with one hidden layer, using sigmoid activation functions.
+
+-   The first layer maps the 2 input features to 2 hidden neurons.
+
+-   The second layer outputs a single value, predicting the class.
+:::
+
+## Code
+
+```{python}
+#| code-line-numbers: "|1|3|4-7|9|10-12|14"
+import torch.nn as nn
+
+class XORNet(nn.Module):
+    def __init__(self):
+        super(XORNet, self).__init__()
+        self.fc1 = nn.Linear(2, 2)
+        self.fc2 = nn.Linear(2, 1)
+    
+    def forward(self, x):
+        x = torch.sigmoid(self.fc1(x))
+        x = torch.sigmoid(self.fc2(x))
+        return x
+
+model = XORNet()
+```
+:::
+
+## Training the Network {.smaller}
+
+::: panel-tabset
+## Conceptually
+
+**Implementing the Training Loop:**
+
+::: incremental
+-   Perform a forward pass, compute the loss, and backpropagate the error.
+
+-   Update weights and biases using the optimizer.
+
+-   Monitor loss to ensure the model is learning correctly.
+:::
+
+## Code
+
+```{python}
+#| code-fold: true
+#| code-summary: "Training"
+#| code-line-numbers: "|1|3,4|6|7-12|14,15"
+import torch.optim as optim
+
+criterion = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=0.1)
+
+for epoch in range(100):
+    for batch_X, batch_y in dataloader:
+        optimizer.zero_grad()
+        output = model(batch_X)
+        loss = criterion(output, batch_y)
+        loss.backward()
+        optimizer.step()
+
+    if (epoch+1) % 10 == 0:
+        print(f'Epoch {epoch+1}, Loss: {loss.item()}')
+```
+:::
+
+## Testing + Evaluation {.smaller}
+
+::: panel-tabset
+## Conceptually
+
+**Testing the Model on XOR Dataset:**
+
+-   Evaluate the model on the entire dataset after training.
+
+-   Calculate accuracy by comparing predicted values to actual labels.
+
+## Code
+
+```{python}
+#| code-line-numbers: "|1|2|3|4,5"
+with torch.no_grad():
+    predicted = model(X_tensor)
+    predicted = (predicted > 0.5).float()
+    accuracy = (predicted == y_tensor).sum().item() / y_tensor.size(0)
+    print(f'Accuracy: {accuracy * 100}%')
+```
+:::
+
+# Summary
+
+## Summary {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/ai-healthcare.webp){fig-align="center" width="600"}
+:::
+
+::: {.column width="50%"}
+::: incremental
+-   Revolutionizing diagnostics and personalized treatments.
+
+-   Success depends on understanding neural networks, architectures, and overcoming challenges.
+:::
+:::
+:::
+
+# Thank You 😊 {style="text-align: center;"}

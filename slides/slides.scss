@@ -55,6 +55,13 @@ b, strong {
 color: #378DBD;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .reveal .slide .question {
   border-left: 3px solid #1E5288;
   padding-left: 0.5em;

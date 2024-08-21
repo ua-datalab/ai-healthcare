@@ -2,3 +2,7 @@
   quarto-pub:
     - id: 4aea0f72-1a91-4236-97b9-bd59fae54dc4
       url: 'https://gchism.quarto.pub/intro-dl-conceptual'
+- source: intro-deep-learning-pytorch.qmd
+  quarto-pub:
+    - id: c5c3a58b-ed70-4d41-9007-05947c7c83d8
+      url: 'https://gchism.quarto.pub/intro-dl-pytorch'

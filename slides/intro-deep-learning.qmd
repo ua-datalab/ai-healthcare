@@ -659,12 +659,10 @@ What do you do now?..
 
 ::: columns
 ::: {.column width="50%"}
-
 ![](images/ai-healthcare.webp){fig-align="center" width="600"}
 :::
 
 ::: {.column width="50%"}
-
 ::: incremental
 -   Revolutionizing diagnostics and personalized treatments.
 
