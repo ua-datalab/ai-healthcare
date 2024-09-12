@@ -1,0 +1,72 @@
+---
+title: "Advanced AI for Healthcare"
+author: "Dr. Greg Chism"
+institute: U of A InfoSci + DataLab
+subtitle: Introduction to LSTMs
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
+auto-stretch: false
+footer: "[\U0001F517 ua-datalab.github.io](https://ua-datalab.github.io/)"
+logo: "https://github.com/clizarraga-UAD7/DataScienceLab/raw/main/images/UADLSquareLogo.png?raw=true"
+jupyter: python3
+resource_files:
+- slides.scss
+---
+
+## Objective {.smaller}
+
+::: fragment
+Provide a conceptual overview of sequence modeling, focusing on the principles of LSTMs and their applications in handling sequential healthcare data.
+:::
+
+::: fragment
+> No code today 🙂
+:::
+
+## Overview of topics
+
+::: incremental
+1.  Introduction to Sequence Modeling
+
+2.  Understanding LSTMs
+
+3.  Key Components of LSTMs
+
+4.  Why Use LSTMs?
+
+5.  Applications in Healthcare
+:::
+
+# Introduction to Sequence Modeling
+
+## Introduction to Sequence Modeling {.smaller}
+
+::: fragment
+**Definition:** Sequence modeling involves predicting future values based on previous data points, capturing patterns and dependencies over time.
+:::
+
+::: incremental
+-   **Examples of Sequential Data:**
+
+    -   Time series (e.g., heart rate over time).
+
+    -   Text (e.g., clinical notes).
+
+    -   EHR data (e.g., patient vitals tracked over hospital stays).
+
+-   **Importance in Healthcare:**
+
+    -   Helps predict patient outcomes, monitor disease progression, and tailor treatments based on sequential patterns in patient data.
+:::
+
+# Thank You 😊 {style="text-align: center;"}
