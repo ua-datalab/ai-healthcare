@@ -83,6 +83,8 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
 
 ## RNNs (another view) {.smaller}
 
+![](images/rnn-1.png){fig-align="center"}
+
 ## Long Short-Term Memory (LSTM)
 
 # Thank You 😊 {style="text-align: center;"}
