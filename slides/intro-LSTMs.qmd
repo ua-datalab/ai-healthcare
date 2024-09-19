@@ -69,4 +69,20 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
     -   Helps predict patient outcomes, monitor disease progression, and tailor treatments based on sequential patterns in patient data.
 :::
 
+## Recurrent Neural Networks (RNNs) {.smaller}
+
+![](images/rnn-01.png){fig-align="center" width="660"}
+
+::: {.incremental .small}
+-   Handles sequence data, like time series or language.
+
+-   Captures dependencies over time.
+
+-   **Health Sciences Application:** Predicting patient outcomes over time.
+:::
+
+## RNNs (another view) {.smaller}
+
+## Long Short-Term Memory (LSTM)
+
 # Thank You 😊 {style="text-align: center;"}
