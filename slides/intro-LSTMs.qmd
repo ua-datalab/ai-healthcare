@@ -18,7 +18,6 @@ execute:
 auto-stretch: false
 footer: "[\U0001F517 ua-datalab.github.io](https://ua-datalab.github.io/)"
 logo: "https://github.com/clizarraga-UAD7/DataScienceLab/raw/main/images/UADLSquareLogo.png?raw=true"
-jupyter: python3
 resource_files:
 - slides.scss
 ---
@@ -83,8 +82,116 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
 
 ## RNNs (another view) {.smaller}
 
-![](images/rnn-1.png){fig-align="center"}
+![](images/rnn-1.png){fig-align="center" width="848"}
+
+::: incremental
+-   X = input vector
+
+-   A = hidden vector
+
+-   h = output vector
+:::
 
 ## Long Short-Term Memory (LSTM)
+
+![](images/lstm-1.png){fig-align="center" width="725"}
+
+![](images/lstm-legend.png){fig-align="center" width="618"}
+
+## Key components: Input gates (σ) {.smaller}
+
+![](images/lstm-gates.png){fig-align="center" width="555"}
+
+::: columns
+::: {.column width="33.33%"}
+::: fragment
+**Forget Gate:** <br> Decides how much of the previous cell state $c_{t-1}$​ to keep or forget.
+:::
+:::
+
+::: {.column width="33.33%"}
+::: fragment
+**Input Gate:** <br> Controls how much of the new input will be added to the cell state.
+:::
+:::
+
+::: {.column width="33.33%"}
+::: fragment
+**Output Gate:** Determines how much of the cell state influences the next hidden state $h_t$
+:::
+:::
+:::
+
+## Key components: Tanh layer {.smaller}
+
+![](images/lstm-tanh-layer.png){fig-align="center" width="714"}
+
+::: fragment
+**Tanh (tanh)**: Creates candidate values for updating the cell state, with outputs between -1 and 1.
+:::
+
+## Key components: Multiplication (x) {.smaller}
+
+![](images/lstm-multiplicative.png){fig-align="center" width="714"}
+
+::: fragment
+**Multiplication (x):** Element-wise multiplication used in forget, input, and output gates to adjust the cell and hidden states.
+:::
+
+## Key components: Addition (+) {.smaller}
+
+![](images/lstm-additive.png){fig-align="center" width="714"}
+
+::: fragment
+**Addition (+):** Combines the results of the forget and input gates to update the cell state.
+:::
+
+## Key components: Copy & Concatenate {.smaller}
+
+![](images/lstm-copy-concat.png){fig-align="center" width="658"}
+
+::: fragment
+**Copy or concatenate information:** helps retain information across time steps. The copy operation preserves the flow of important information.
+:::
+
+## Key components: Cell state ($C_t$) {.smaller}
+
+![](images/lstm-cell-state.png){fig-align="center" width="715"}
+
+::: fragment
+**Cell state** $C_t$**:** The internal memory, updated at each time step, storing long-term information.
+:::
+
+## Key components: Cell state ($h_t$) {.smaller}
+
+![](images/lstm-hidden-state.png){fig-align="center" width="712"}
+
+::: fragment
+**Hidden state** $h_t$**:** The output at time step $t$, filtered from the cell state and passed to the next cell.
+:::
+
+## Process flow
+
+![](images/lstm-process-1.png){fig-align="center" width="791"}
+
+## Process flow
+
+![](images/lstm-process-2.png){fig-align="center" width="791"}
+
+## Process flow
+
+![](images/lstm-process-3.png){fig-align="center" width="791"}
+
+## Process flow
+
+![](images/lstm-process-4.png){fig-align="center" width="791"}
+
+## Process flow
+
+![](images/lstm-process-5.png){fig-align="center" width="799"}
+
+## Process flow
+
+![](images/lstm-process-6.png){fig-align="center" width="791"}
 
 # Thank You 😊 {style="text-align: center;"}

@@ -410,12 +410,166 @@ Dr.&nbsp;Greg Chism
 <h2>RNNs (another view)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/rnn-1.png" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="images/rnn-1.png" class="quarto-figure quarto-figure-center" width="848"></p>
 </figure>
+</div>
+<div>
+<ul>
+<li class="fragment"><p>X = input vector</p></li>
+<li class="fragment"><p>A = hidden vector</p></li>
+<li class="fragment"><p>h = output vector</p></li>
+</ul>
 </div>
 </section>
 <section id="long-short-term-memory-lstm" class="slide level2">
 <h2>Long Short-Term Memory (LSTM)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-1.png" class="quarto-figure quarto-figure-center" width="725"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-legend.png" class="quarto-figure quarto-figure-center" width="618"></p>
+</figure>
+</div>
+</section>
+<section id="key-components-input-gates-σ" class="slide level2 smaller">
+<h2>Key components: Input gates (σ)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-gates.png" class="quarto-figure quarto-figure-center" width="555"></p>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:33.33%;">
+<div class="fragment">
+<p><strong>Forget Gate:</strong> <br> Decides how much of the previous cell state <span class="math inline">\(c_{t-1}\)</span>​ to keep or forget.</p>
+</div>
+</div><div class="column" style="width:33.33%;">
+<div class="fragment">
+<p><strong>Input Gate:</strong> <br> Controls how much of the new input will be added to the cell state.</p>
+</div>
+</div><div class="column" style="width:33.33%;">
+<div class="fragment">
+<p><strong>Output Gate:</strong> Determines how much of the cell state influences the next hidden state <span class="math inline">\(h_t\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="key-components-tanh-layer" class="slide level2 smaller">
+<h2>Key components: Tanh layer</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-tanh-layer.png" class="quarto-figure quarto-figure-center" width="714"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Tanh (tanh)</strong>: Creates candidate values for updating the cell state, with outputs between -1 and 1.</p>
+</div>
+</section>
+<section id="key-components-multiplication-x" class="slide level2 smaller">
+<h2>Key components: Multiplication (x)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-multiplicative.png" class="quarto-figure quarto-figure-center" width="714"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Multiplication (x):</strong> Element-wise multiplication used in forget, input, and output gates to adjust the cell and hidden states.</p>
+</div>
+</section>
+<section id="key-components-addition" class="slide level2 smaller">
+<h2>Key components: Addition (+)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-additive.png" class="quarto-figure quarto-figure-center" width="714"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Addition (+):</strong> Combines the results of the forget and input gates to update the cell state.</p>
+</div>
+</section>
+<section id="key-components-copy-concatenate" class="slide level2 smaller">
+<h2>Key components: Copy &amp; Concatenate</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-copy-concat.png" class="quarto-figure quarto-figure-center" width="658"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Copy or concatenate information:</strong> helps retain information across time steps. The copy operation preserves the flow of important information.</p>
+</div>
+</section>
+<section id="key-components-cell-state-c_t" class="slide level2 smaller">
+<h2>Key components: Cell state (<span class="math inline">\(C_t\)</span>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-cell-state.png" class="quarto-figure quarto-figure-center" width="715"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Cell state</strong> <span class="math inline">\(C_t\)</span><strong>:</strong> The internal memory, updated at each time step, storing long-term information.</p>
+</div>
+</section>
+<section id="key-components-cell-state-h_t" class="slide level2 smaller">
+<h2>Key components: Cell state (<span class="math inline">\(h_t\)</span>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-hidden-state.png" class="quarto-figure quarto-figure-center" width="712"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Hidden state</strong> <span class="math inline">\(h_t\)</span><strong>:</strong> The output at time step <span class="math inline">\(t\)</span>, filtered from the cell state and passed to the next cell.</p>
+</div>
+</section>
+<section id="process-flow" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-1.png" class="quarto-figure quarto-figure-center" width="791"></p>
+</figure>
+</div>
+</section>
+<section id="process-flow-1" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-2.png" class="quarto-figure quarto-figure-center" width="791"></p>
+</figure>
+</div>
+</section>
+<section id="process-flow-2" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-3.png" class="quarto-figure quarto-figure-center" width="791"></p>
+</figure>
+</div>
+</section>
+<section id="process-flow-3" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-4.png" class="quarto-figure quarto-figure-center" width="791"></p>
+</figure>
+</div>
+</section>
+<section id="process-flow-4" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-5.png" class="quarto-figure quarto-figure-center" width="799"></p>
+</figure>
+</div>
+</section>
+<section id="process-flow-5" class="slide level2">
+<h2>Process flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-process-6.png" class="quarto-figure quarto-figure-center" width="791"></p>
+</figure>
+</div>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center" style="text-align: center;">
 <h1>Thank You 😊</h1>
