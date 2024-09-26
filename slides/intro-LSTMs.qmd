@@ -37,13 +37,11 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
 ::: incremental
 1.  Introduction to Sequence Modeling
 
-2.  Understanding LSTMs
+2.  LSTMs in Healthcare
 
-3.  Key Components of LSTMs
+3.  Why Use LSTMs?
 
-4.  Why Use LSTMs?
-
-5.  Applications in Healthcare
+4.  Key Components of LSTMs
 :::
 
 # Introduction to Sequence Modeling
@@ -92,11 +90,73 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
 -   h = output vector
 :::
 
+## Long Short-Term Memory (LSTM) {.smaller}
+
+Widely because they retain context for extended periods.
+
+::: columns
+::: {.column width="50%"}
+**Apple**
+
+::: fragment
+![](images/iphone-keyboard.webp){fig-align="center" width="174"}
+:::
+
+::: fragment
+![](images/hey-siri.jpg){fig-align="center" width="457"}
+:::
+:::
+
+::: {.column width="50%"}
+**Google**
+
+::: fragment
+![](images/Alphago_logo.png){fig-align="center" width="762"}
+:::
+
+::: fragment
+![](images/google-translate.webp){fig-align="center" width="356"}
+:::
+:::
+:::
+
+## LSTMs in healthcare {.smaller}
+
+::: incremental
+-   **Clinical Diagnosis & Prediction**: Predict patient outcomes, like disease progression or readmission, from EHR time-series.
+
+-   **Drug Discovery**: Predict drug efficacy and side effects from molecular sequences.
+
+-   **Medical Time-Series**: Detect abnormalities (e.g., arrhythmias, epilepsy) from physiological signals like ECG and EEG.
+
+-   **Healthcare Speech Processing**: Improve voice recognition in medical transcription and virtual assistants.
+
+-   **Patient Pathway Modeling**: Analyze clinical event sequences to predict future healthcare needs.
+
+-   **Wearable Monitoring**: Monitor health in real time through wearable data (e.g., heart rate, sleep patterns).
+:::
+
+## Why use LSTMs? {.smaller}
+
+::: incremental
+-   **Sequential Data Processing**: Ideal for analyzing time-series data like EHRs and vital signs.
+
+-   **Capturing Long-Term Patterns**: Retains medical history for better predictions of outcomes and disease progression.
+
+-   **Anomaly Detection**: Identifies irregularities in continuous data, such as ECG or blood pressure trends.
+
+-   **Natural Language Understanding**: Enhances medical transcription and summarization of clinical notes.
+
+-   **Handles Irregular Data**: Manages gaps and irregular intervals in patient records effectively.
+
+-   **Real-Time Monitoring**: Powers wearable device data analysis for early alerts.
+
+-   **End-to-End Learning**: Learns directly from raw healthcare data, minimizing manual preprocessing.
+:::
+
 ## Long Short-Term Memory (LSTM)
 
-![](images/lstm-1.png){fig-align="center" width="725"}
-
-![](images/lstm-legend.png){fig-align="center" width="618"}
+![](images/lstm-1.png){fig-align="center" width="818"}
 
 ## Key components: Input gates (σ) {.smaller}
 
@@ -193,5 +253,9 @@ Provide a conceptual overview of sequence modeling, focusing on the principles o
 ## Process flow
 
 ![](images/lstm-process-6.png){fig-align="center" width="791"}
+
+## Full picture
+
+![](images/lstm-whole.png){fig-align="center" width="769"}
 
 # Thank You 😊 {style="text-align: center;"}
