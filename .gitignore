@@ -3,3 +3,7 @@
 .RData
 .Ruserdata
 .DS_Store
+notebooks/data/ICUSTAYS.csv
+notebooks/data/PATIENTS.csv
+notebooks/data/LABEVENTS.csv
+notebooks/data/mimic_data.csv
