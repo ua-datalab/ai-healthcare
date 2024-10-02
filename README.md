@@ -28,7 +28,7 @@ In this workshop series, you will delve into the practical applications of power
 
 -   **PyTorch**: A versatile deep learning framework that enables the creation and training of sophisticated neural networks, from LSTMs to Transformers.
 -   **Hugging Face**: A leading platform for generative AI, offering pre-trained models and tools that accelerate the development of AI applications in healthcare.
--   **RAG Models**: Combining retrieval mechanisms with generative AI to provide contextually relevant information, enhancing decision support and patient care.
+-   **RAG Models** (Coming Spring 2025): Combining retrieval mechanisms with generative AI to provide contextually relevant information, enhancing decision support and patient care.
 
 By mastering these tools, you can develop advanced AI solutions that address some of the most pressing challenges in healthcare today.
 
@@ -46,7 +46,7 @@ These workshops focus on three essential areas of AI in healthcare, each contrib
 -   **LSTMs and Transformers**: Learn how to model sequential data, crucial for understanding and predicting patient outcomes over time.
 -   **Application in Healthcare**: Implement sequence models to analyze patient journeys and improve clinical decision-making.
 
-### **RAG Models: Enhancing Decision Support**
+### **RAG Models: Enhancing Decision Support** (Coming Spring 2025)
 
 -   **Conceptual Understanding**: Explore how RAG models combine retrieval and generative AI to provide contextually relevant information.
 -   **Practical Application**: Fine-tune RAG models for specific healthcare tasks, such as generating treatment recommendations based on patient history.
@@ -79,12 +79,12 @@ When integrated, these techniques enable you to:
 | 10/10/2024 | Applied Sequence Modeling with PyTorch     | A practical workshop focused on implementing and training LSTMs using PyTorch, applying it to sequential healthcare data.                                                                     |                                                                                                        |
 | 10/17/2024 | Transformer models (Conceptual)            | A conceptual overview of sequence modeling, focusing on the principles and differences between LSTMs and Transformer models, and their applications in handling sequential healthcare data.   |                                                                                                        |
 | 10/24/2024 | Applied Transformer models with PyTorch    | A practical workshop focused on implementing and training ClinicalBERT using PyTorch + HuggingFace, with a comparison of their performance on sequential healthcare data.                    |                                                                                                        |
-| 10/31/2024 | Introduction to RAG Models (Conceptual)    | An introduction to Retrieval-Augmented Generation (RAG) models, explaining how they combine retrieval mechanisms with generative AI to enhance decision support and context-aware generation. |                                                                                                        |
+
 
 
 Created: 08/16/2024 (G. Chism)
 
-Updated: 09/27/2024 (G. Chism)
+Updated: 10/02/2024 (G. Chism)
 
 [DataLab](https://www.datascience.arizona.edu/education/uarizona-data-lab), Data Science Institute, University of Arizona.
 
