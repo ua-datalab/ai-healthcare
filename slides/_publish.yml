@@ -6,3 +6,7 @@
   quarto-pub:
     - id: c5c3a58b-ed70-4d41-9007-05947c7c83d8
       url: 'https://gchism.quarto.pub/intro-dl-pytorch'
+- source: intro-LSTMs.qmd
+  quarto-pub:
+    - id: 25877e33-cb96-421c-8e51-db9bfb45fcb1
+      url: 'https://gchism.quarto.pub/intro-lstm'

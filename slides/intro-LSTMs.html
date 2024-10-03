@@ -359,10 +359,9 @@ Dr.&nbsp;Greg Chism
 <div>
 <ol type="1">
 <li class="fragment"><p>Introduction to Sequence Modeling</p></li>
-<li class="fragment"><p>Understanding LSTMs</p></li>
-<li class="fragment"><p>Key Components of LSTMs</p></li>
+<li class="fragment"><p>LSTMs in Healthcare</p></li>
 <li class="fragment"><p>Why Use LSTMs?</p></li>
-<li class="fragment"><p>Applications in Healthcare</p></li>
+<li class="fragment"><p>Key Components of LSTMs</p></li>
 </ol>
 </div>
 </section>
@@ -473,12 +472,48 @@ Dr.&nbsp;Greg Chism
 </ul>
 </div>
 </section>
+<section id="why-use-lstms" class="slide level2 xsmall">
+<h2>Why use LSTMs?</h2>
+<div>
+<ul>
+<li class="fragment"><p><strong>Sequential Data Processing</strong>: Ideal for analyzing time-series data like EHRs and vital signs.</p></li>
+<li class="fragment"><p><strong>Capturing Long-Term Patterns</strong>: Retains medical history for better predictions of outcomes and disease progression.</p></li>
+<li class="fragment"><p><strong>Anomaly Detection</strong>: Identifies irregularities in continuous data, such as ECG or blood pressure trends.</p></li>
+<li class="fragment"><p><strong>Natural Language Understanding</strong>: Enhances medical transcription and summarization of clinical notes.</p></li>
+<li class="fragment"><p><strong>Handles Irregular Data</strong>: Manages gaps and irregular intervals in patient records effectively.</p></li>
+<li class="fragment"><p><strong>Real-Time Monitoring</strong>: Powers wearable device data analysis for early alerts.</p></li>
+<li class="fragment"><p><strong>End-to-End Learning</strong>: Learns directly from raw healthcare data, minimizing manual preprocessing.</p></li>
+</ul>
+</div>
+</section>
 <section id="long-short-term-memory-lstm-1" class="slide level2">
 <h2>Long Short-Term Memory (LSTM)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/lstm-1.png" class="quarto-figure quarto-figure-center" width="818"></p>
 </figure>
+</div>
+</section>
+<section id="key-components-input-state-x_t" class="slide level2 smaller">
+<h2>Key components: Input state (<span class="math inline">\(X_t\)</span>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-input-state.png" class="quarto-figure quarto-figure-center" width="715"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Input state</strong> <span class="math inline">\(X_t\)</span><strong>:</strong> The feature vector for the current time step.</p>
+</div>
+</section>
+<section id="key-components-cell-state-c_t" class="slide level2 smaller">
+<h2>Key components: Cell state (<span class="math inline">\(C_t\)</span>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lstm-cell-state.png" class="quarto-figure quarto-figure-center" width="715"></p>
+</figure>
+</div>
+<div class="fragment">
+<p><strong>Cell state</strong> <span class="math inline">\(C_t\)</span><strong>:</strong> The internal memory, updated at each time step, storing long-term information.</p>
 </div>
 </section>
 <section id="key-components-input-gates-σ" class="slide level2 smaller">
@@ -548,19 +583,8 @@ Dr.&nbsp;Greg Chism
 <p><strong>Copy or concatenate information:</strong> helps retain information across time steps. The copy operation preserves the flow of important information.</p>
 </div>
 </section>
-<section id="key-components-cell-state-c_t" class="slide level2 smaller">
-<h2>Key components: Cell state (<span class="math inline">\(C_t\)</span>)</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/lstm-cell-state.png" class="quarto-figure quarto-figure-center" width="715"></p>
-</figure>
-</div>
-<div class="fragment">
-<p><strong>Cell state</strong> <span class="math inline">\(C_t\)</span><strong>:</strong> The internal memory, updated at each time step, storing long-term information.</p>
-</div>
-</section>
-<section id="key-components-cell-state-h_t" class="slide level2 smaller">
-<h2>Key components: Cell state (<span class="math inline">\(h_t\)</span>)</h2>
+<section id="key-components-hidden-state-h_t" class="slide level2 smaller">
+<h2>Key components: Hidden state (<span class="math inline">\(h_t\)</span>)</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/lstm-hidden-state.png" class="quarto-figure quarto-figure-center" width="712"></p>

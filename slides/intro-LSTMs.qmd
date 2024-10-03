@@ -136,7 +136,7 @@ Widely because they retain context for extended periods.
 -   **Wearable Monitoring**: Monitor health in real time through wearable data (e.g., heart rate, sleep patterns).
 :::
 
-## Why use LSTMs? {.smaller}
+## Why use LSTMs? {.xsmall}
 
 ::: incremental
 -   **Sequential Data Processing**: Ideal for analyzing time-series data like EHRs and vital signs.
@@ -157,6 +157,22 @@ Widely because they retain context for extended periods.
 ## Long Short-Term Memory (LSTM)
 
 ![](images/lstm-1.png){fig-align="center" width="818"}
+
+## Key components: Input state ($X_t$) {.smaller}
+
+![](images/lstm-input-state.png){fig-align="center" width="715"}
+
+::: fragment
+**Input state** $X_t$**:** The feature vector for the current time step.
+:::
+
+## Key components: Cell state ($C_t$) {.smaller}
+
+![](images/lstm-cell-state.png){fig-align="center" width="715"}
+
+::: fragment
+**Cell state** $C_t$**:** The internal memory, updated at each time step, storing long-term information.
+:::
 
 ## Key components: Input gates (σ) {.smaller}
 
@@ -214,15 +230,8 @@ Widely because they retain context for extended periods.
 **Copy or concatenate information:** helps retain information across time steps. The copy operation preserves the flow of important information.
 :::
 
-## Key components: Cell state ($C_t$) {.smaller}
 
-![](images/lstm-cell-state.png){fig-align="center" width="715"}
-
-::: fragment
-**Cell state** $C_t$**:** The internal memory, updated at each time step, storing long-term information.
-:::
-
-## Key components: Cell state ($h_t$) {.smaller}
+## Key components: Hidden state ($h_t$) {.smaller}
 
 ![](images/lstm-hidden-state.png){fig-align="center" width="712"}
 
