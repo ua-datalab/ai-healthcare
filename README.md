@@ -72,16 +72,16 @@ When integrated, these techniques enable you to:
 [Program not definitive!]
 
 | Date       | Title                                      | Topic Description                                                                                                                                                                          | Materials                                                                                                                                                                                   |
-|---------------|---------------|---------------------------|---------------|
+|----------------|----------------|------------------------|----------------|
 | 09/19/2024 | Introduction to Deep Learning (Conceptual) | A theoretical overview of deep learning, focusing on the fundamentals of neural networks, activation functions, and the challenges of training deep learning models.                       | [Slides](https://gchism.quarto.pub/intro-dl-conceptual/#/title-slide)                                                                                                                       |
 | 09/26/2024 | Applied Deep Learning with PyTorch         | Hands-on workshop where participants will build and train a simple neural network using PyTorch, applying it to a real-world dataset to understand the practical aspects of deep learning. | [Notebook](https://github.com/ua-datalab/ai-healthcare/blob/main/Notebooks/intro-dl-pytorch-xor.ipynb) <br> [Supplemental Slides](https://gchism.quarto.pub/intro-dl-pytorch/#/title-slide) |
 | 10/03/2024 | LSTMs (Conceptual)                         | A conceptual overview of sequence modeling, covering the principles of LSTMs, and their applications in handling sequential data.                                                          | [Slides](https://gchism.quarto.pub/intro-lstm/#/title-slide)                                                                                                                                |
-| 10/10/2024 | Applied Sequence Modeling with PyTorch     | A practical workshop focused on implementing and training LSTMs using PyTorch, applying it to sequential healthcare data.                                                                  |                                                                                                                                                                                             |
-| 10/17/2024 | Applied Transformer models with PyTorch    | A practical workshop focused on implementing and training ClinicalBERT using PyTorch + HuggingFace, with a comparison of their performance on sequential healthcare data.                  |                                                                                                                                                                                             |
+| 10/10/2024 | Applied Sequence Modeling with PyTorch     | A practical workshop focused on implementing and training LSTMs using PyTorch, applying it to sequential healthcare data.                                                                  | [Notebook](https://github.com/ua-datalab/ai-healthcare/blob/main/Notebooks/intro-lstm-mimic.ipynb)                                                                                          |
+| 10/17/2024 | Applied Transformer models with PyTorch    | A practical workshop focused on implementing and training ClinicalBERT using PyTorch + HuggingFace, with a comparison of their performance on sequential healthcare data.                  | [Notebook](https://github.com/ua-datalab/ai-healthcare/blob/main/Notebooks/intro-transformers-mimic.ipynb)                                                                                  |
 
 Created: 08/16/2024 (G. Chism)
 
-Updated: 10/07/2024 (G. Chism)
+Updated: 10/25/2024 (G. Chism)
 
 [DataLab](https://www.datascience.arizona.edu/education/uarizona-data-lab), Data Science Institute, University of Arizona.
 
